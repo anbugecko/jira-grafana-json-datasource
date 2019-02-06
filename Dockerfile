@@ -1,4 +1,6 @@
-FROM node:10.10-alpine
+FROM node:alpine
+RUN apk add --no-cache tzdata
+ENV TZ Europe/Oslo
 WORKDIR /app
 COPY package*.json ./
 RUN npm install
